@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>todo</h1>
-    <TodoList :todos="todos" />
+    <TodoList :todos="todos" :nextId="nextTodoId" />
   </div>
 </template>
 
@@ -17,7 +17,8 @@ export default {
       todos: [
         { id: 1, title: "Todoリストを作成する", isChecked: true },
         { id: 2, title: "StoreでToDoリストを管理する", isChecked: false }
-      ]
+      ],
+      nextTodoId: 3
     } 
   }
 }
