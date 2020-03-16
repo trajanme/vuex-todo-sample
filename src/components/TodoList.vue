@@ -2,7 +2,7 @@
   <div class="todo-list">
     <ul>
       <li v-for="todo in todos" :key="todo.id">
-        <label>
+        <label v-bind:class="{ checked: todo.isChecked }">
           <input type="checkbox" v-model="todo.isChecked">
           {{ todo.title }}
         </label>
@@ -18,4 +18,13 @@ export default {
     todos: Array
   }
 }
-</script>script>
+</script>
+
+<style scoped>
+ul {
+  text-align: left;
+}
+.checked {
+  text-decoration: line-through;
+}
+</style>
