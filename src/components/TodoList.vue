@@ -9,34 +9,32 @@
       </li>
     </ul>
     <p>
-      <input type="text" placeholder="input todo..." v-model="newTodoTitle" @keyup.enter="addTodo">
+      <input type="text" placeholder="input todo..." v-model="newTodoTitle" @keyup.enter="registerTodo">
     </p>
   </div>
 </template>
 
 <script>
+import store from '../store/index'
 export default {
   name: 'TodoList',
   data () {
     return {
-      newTodoTitle: '',
-      todolist: this.todos,
-      nextTodoId: this.nextId
+      newTodoTitle: ''
     }
   },
-  props: {
-    todos: Array,
-    nextId: Number
+  computed: {
+    todos () {
+      return store.state.todos
+    }
   },
   methods: {
-    addTodo: function() {
-      this.todolist.push({
-        id: this.nextTodoId,
+    registerTodo: function () {
+      store.commit('addTodo', {
         title: this.newTodoTitle,
         isChecked: false
       })
       this.newTodoTitle = ''
-      this.nextTodoId++
     }
   }
 }
