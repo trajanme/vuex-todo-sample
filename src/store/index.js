@@ -22,6 +22,9 @@ export default new Vuex.Store({
       state.todos.push(payload)
       state.nextTodoId++
       console.log(state.todos)
+    },
+    deleteTodo (state, payload) {
+      state.todos = state.todos.filter( todo => todo.id != payload.id )
     }
   },
   actions: {

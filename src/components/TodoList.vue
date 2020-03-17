@@ -6,6 +6,7 @@
           <input type="checkbox" v-model="todo.isChecked">
           {{ todo.title }}
         </label>
+        <input type="button" value="DELETE" @click="removeTodo(todo.id)">
       </li>
     </ul>
     <p>
@@ -35,6 +36,11 @@ export default {
         isChecked: false
       })
       this.newTodoTitle = ''
+    },
+    removeTodo: function ( todoId ) {
+      store.commit('deleteTodo', {
+        id: todoId
+      })
     }
   }
 }
