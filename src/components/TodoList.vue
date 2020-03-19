@@ -24,10 +24,8 @@ export default {
       newTodoTitle: ''
     }
   },
-  computed: {
-    todos () {
-      return store.state.todos
-    }
+  props: {
+    todos: Array
   },
   methods: {
     registerTodo: function () {

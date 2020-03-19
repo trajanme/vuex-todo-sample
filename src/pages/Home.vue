@@ -1,16 +1,22 @@
 <template>
   <div class="home">
     <h1>todo</h1>
-    <TodoList />
+    <TodoList :todos="todos" />
   </div>
 </template>
 
 <script>
+import store from '../store/index'
 import TodoList from '../components/TodoList'
 export default {
   name: 'Home',
   components: {
     TodoList
+  },
+  computed: {
+    todos () {
+      return store.state.todos
+    }
   }
 }
 </script>
