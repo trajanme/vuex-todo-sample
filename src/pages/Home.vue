@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1>todo</h1>
+    <p>{{ numOfTodos }} todos.</p>
     <TodoList :todos="todos" />
   </div>
 </template>
@@ -16,6 +17,9 @@ export default {
   computed: {
     todos () {
       return store.state.todos
+    },
+    numOfTodos () {
+      return store.state.todos.length
     }
   }
 }
