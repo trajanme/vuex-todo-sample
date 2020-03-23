@@ -10,7 +10,7 @@
       </li>
     </ul>
     <p>
-      <input type="text" placeholder="input todo..." v-model="newTodoTitle" @keyup.enter="registerTodo">
+      <input type="text" placeholder="input todo..." class="input-form" v-model="newTodoTitle" @keyup.enter="registerTodo">
     </p>
   </div>
 </template>
@@ -50,5 +50,26 @@ ul {
 }
 .checked {
   text-decoration: line-through;
+}
+.input-form {
+  border: 0;
+  padding: 10px;
+  font-size:1.2em;
+  color:#2c3e50;
+  border:solid 1px #2c3e50;
+  margin:0 0 20px;
+  width:300px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.input-form:focus {
+  border:solid 1px #FFD41D;
 }
 </style>
