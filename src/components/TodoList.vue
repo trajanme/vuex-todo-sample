@@ -48,6 +48,9 @@ export default {
 ul {
   text-align: left;
 }
+li {
+  list-style: none;
+}
 .checked {
   text-decoration: line-through;
 }
