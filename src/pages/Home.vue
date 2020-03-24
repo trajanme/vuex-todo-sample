@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <h1>todo</h1>
-    <p>{{ numOfTodos }} todos.</p>
+    <h1>Vuex Todo App</h1>
+    <p>{{ numOfTodos }} todos and remaining {{ numOfRemainingTodos }} todos.</p>
     <TodoList :todos="todos" />
   </div>
 </template>
@@ -19,7 +19,10 @@ export default {
       return store.state.todos
     },
     numOfTodos () {
-      return store.state.todos.length
+      return store.getters.countTodos
+    },
+    numOfRemainingTodos () {
+      return store.getters.countTodos - store.getters.countDoneTodos
     }
   }
 }

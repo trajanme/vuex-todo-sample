@@ -12,8 +12,14 @@ export default new Vuex.Store({
     nextTodoId: 3
   },
   getters: {
+    doneTodos (state) {
+      return state.todos.filter(todo => todo.isChecked)
+    },
     countTodos (state) {
-      return state.todos.length()
+      return state.todos.length
+    },
+    countDoneTodos (state, getters) {
+      return getters.doneTodos.length
     }
   },
   mutations: {
